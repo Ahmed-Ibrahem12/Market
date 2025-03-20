@@ -70,26 +70,26 @@ export default function Header({ text, setText, openDrawer }) {
   // }, []);
 
   return (
-    <Navbar className="mx-auto bg-green-800 max-w-screen-3xl px-4 py-2 lg:px-8 lg:py-4 top-0 sticky z-20">
-      <div className="container mx-auto flex flex-wrap items-center justify-between text-blue-gray-900">
+    <Navbar className="bg-green-800 lg:px-8 lg:py-4 max-w-screen-3xl mx-auto px-4 py-2 sticky top-0 z-20">
+      <div className="container flex flex-wrap justify-between text-blue-gray-900 items-center mx-auto">
         <div className="flex items-center">
-          <button className="text-white me-2 " onClick={openDrawer}>
-            <TfiMenu className="font-bold text-[1.1em]" />
+          <button className="text-white me-2" onClick={openDrawer}>
+            <TfiMenu className="text-[1.1em] font-bold" />
           </button>
 
           <Typography
-            className="mr-4 cursor-pointer text-white text-[1.1em] py-1.5 font-bold"
+            className="text-[1.1em] text-white cursor-pointer font-bold mr-4 py-1.5"
             onClick={() => navigate("/")}
           >
             Market
           </Typography>
         </div>
-        <div className="hidden items-center gap-x-3 lg:flex w-1/2 ">
-          <div className="w-full relative flex items-center">
+        <div className="w-1/2 gap-x-3 hidden items-center lg:flex">
+          <div className="flex w-full items-center relative">
             <Input
               type="search"
               placeholder="Search Here"
-              className="!border-white relative pl-3 w-full text-white placeholder:text-white "
+              className="text-white w-full !border-white pl-3 placeholder:text-white relative"
               onChange={() => dispatch(getSearchProducts(text))}
               onChangeCapture={(e) => setText(e.target.value)}
               containerprops={{
@@ -104,7 +104,7 @@ export default function Header({ text, setText, openDrawer }) {
               <button
                 disabled
                 size="sm"
-                className="rounded-lg absolute ms-2 right-1 bg-gray-800 text-white p-1 px-3 font-bold"
+                className="bg-gray-800 p-1 rounded-lg text-white absolute font-bold ms-2 px-3 right-1"
               >
                 Search
               </button>
@@ -113,7 +113,7 @@ export default function Header({ text, setText, openDrawer }) {
                 onClick={() => navigate("/search-page")}
                 size="sm"
                 // color="green"
-                className="rounded-lg absolute ms-2 right-1 bg-black text-white p-1 px-3 font-bold"
+                className="bg-black p-1 rounded-lg text-white absolute font-bold ms-2 px-3 right-1"
               >
                 Search
               </button>
@@ -121,13 +121,13 @@ export default function Header({ text, setText, openDrawer }) {
           </div>
           <div className="relative">
             <Button
-              className="flex items-center gap-3 rounded-lg"
+              className="flex rounded-lg gap-3 items-center"
               onClick={() => navigate("/cart")}
               // size="sm"
             >
-              <FaCartArrowDown className="text-white text-[1.3em]" />
+              <FaCartArrowDown className="text-[1.3em] text-white" />
             </Button>
-            {/* <span className="absolute top-0 right-0 rounded-[50%] w-6 text-white flex items-center justify-center bg-red-600 font-bold">
+            {/* <span className="flex bg-red-600 justify-center rounded-[50%] text-white w-6 absolute font-bold items-center right-0 top-0">
               {CartProducts.length}
             </span> */}
           </div>
@@ -137,21 +137,21 @@ export default function Header({ text, setText, openDrawer }) {
               <a
                 size="sm"
                 id="theme-switcher"
-                class="block w-full whitespace-nowrap cursor-pointer bg-transparent px-3 py-2 text-sm font-normal text-gray-700  focus:bg-gray-200 focus:outline-none active:text-zinc-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-gray-400 dark:text-gray-100 dark:hover:bg-gray-600 focus:dark:bg-gray-600"
-                className="text-white text-[.8em]"
+                className="bg-transparent text-gray-700 text-sm w-full active:no-underline active:text-zinc-800 block cursor-pointer dark:hover:bg-gray-600 dark:text-gray-100 disabled:bg-transparent disabled:pointer-events-none disabled:text-gray-400 focus:bg-gray-200 focus:dark:bg-gray-600 focus:outline-none font-normal px-3 py-2 whitespace-nowrap"
+                className="text-[.8em] text-white"
                 data-theme="light"
                 onClick={() => setCheck(!check)}
               >
-                <div class="pointer-events-none">
+                <div className="pointer-events-none">
                   <div
-                    class="inline-block w-[24px] text-center"
+                    className="text-center w-[24px] inline-block"
                     data-theme-icon="light"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
-                      class="inline-block h-6 w-6"
+                      className="h-6 w-6 inline-block"
                     >
                       <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
                     </svg>
@@ -162,26 +162,26 @@ export default function Header({ text, setText, openDrawer }) {
             ) : (
               <a
                 id="theme-switcher"
-                class="block w-full whitespace-nowrap bg-transparent cursor-pointer px-3 py-2 text-sm font-normal text-gray-700  focus:bg-gray-200 focus:outline-none active:text-zinc-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-gray-400 dark:text-gray-100 dark:hover:bg-gray-600 focus:dark:bg-gray-600"
+                className="bg-transparent text-gray-700 text-sm w-full active:no-underline active:text-zinc-800 block cursor-pointer dark:hover:bg-gray-600 dark:text-gray-100 disabled:bg-transparent disabled:pointer-events-none disabled:text-gray-400 focus:bg-gray-200 focus:dark:bg-gray-600 focus:outline-none font-normal px-3 py-2 whitespace-nowrap"
                 data-theme="dark"
                 onClick={() => setCheck(!check)}
                 data-twe-dropdown-item-ref
               >
-                <div class="pointer-events-none">
+                <div className="pointer-events-none">
                   <div
-                    class="inline-block w-[24px] text-center"
+                    className="text-center w-[24px] inline-block"
                     data-theme-icon="dark"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
-                      class="inline-block h-6 w-6"
+                      className="h-6 w-6 inline-block"
                     >
                       <path
-                        fill-rule="evenodd"
+                        fillRule="evenodd"
                         d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                       />
                     </svg>
                   </div>
@@ -193,7 +193,7 @@ export default function Header({ text, setText, openDrawer }) {
         </div>
         <IconButton
           variant="text"
-          className="ml-auto h-6 w-6 text-white text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+          className="h-6 text-inherit text-white w-6 active:bg-transparent focus:bg-transparent hover:bg-transparent lg:hidden ml-auto"
           ripple={false}
           onClick={() => setOpenNav(!openNav)}
         >
@@ -232,7 +232,7 @@ export default function Header({ text, setText, openDrawer }) {
       <Collapse open={openNav}>
         <div className="container mx-auto">
           <div className="flex flex-col gap-x-2 sm:flex-row sm:items-center">
-            <div className="relative bg-white rounded-lg text-black w-full gap-2 md:w-max">
+            <div className="bg-white rounded-lg text-black w-full gap-2 md:w-max relative">
               <Input
                 type="search"
                 placeholder="Search"
@@ -241,7 +241,7 @@ export default function Header({ text, setText, openDrawer }) {
                 containerProps={{
                   className: "min-w-[288px]",
                 }}
-                className=" !border-t-blue-gray-300 pl-9 placeholder:text-blue-gray-300 focus:!border-blue-gray-300"
+                className="!border-t-blue-gray-300 focus:!border-blue-gray-300 pl-9 placeholder:text-blue-gray-300"
                 labelProps={{
                   className: "before:content-none after:content-none",
                 }}
@@ -255,6 +255,7 @@ export default function Header({ text, setText, openDrawer }) {
             ) : (
               <Button
                 onClick={() => navigate("/search-page")}
+                onClickCapture={() => setOpenNav(!openNav)}
                 size="md"
                 className="rounded-lg mt-2"
               >
@@ -262,13 +263,76 @@ export default function Header({ text, setText, openDrawer }) {
               </Button>
             )}
             <Button
-              className=" gap-3 rounded-lg mt-2 flex items-center justify-center"
+              className="flex justify-center rounded-lg gap-3 items-center mt-2"
               onClick={() => navigate("/cart")}
+              onClickCapture={() => setOpenNav(!openNav)}
               size="md"
             >
-              {/* <div className=" gap-3 m-auto"> */}
-              Cart <FaCartArrowDown className=" text-white text-[1.1em]" />
-              {/* </div> */}
+              Cart <FaCartArrowDown className="text-[1.1em] text-white" />
+            </Button>
+            <Button
+              className="flex justify-center rounded-lg gap-3 items-center mt-2"
+              size="sm"
+              onClick={() => setCheck(!check)}
+              onClickCapture={() => setOpenNav(!openNav)}
+            >
+              <div>
+                {check ? (
+                  <a
+                    size="sm"
+                    id="theme-switcher"
+                    className="bg-transparent text-gray-700 text-sm text-white w-full active:no-underline active:text-zinc-800 block cursor-pointer dark:hover:bg-gray-600 dark:text-gray-100 disabled:bg-transparent disabled:pointer-events-none disabled:text-gray-400 focus:bg-gray-200 focus:dark:bg-gray-600 focus:outline-none font-normal px-3 py-2 whitespace-nowrap"
+                    data-theme="light"
+                    onClick={() => setCheck(!check)}
+                  >
+                    <div className="pointer-events-none">
+                      <div
+                        className="text-center w-[24px] inline-block"
+                        data-theme-icon="light"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          className="h-6 w-6 inline-block"
+                        >
+                          <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+                        </svg>
+                      </div>
+                      <span data-theme-name="light"></span>
+                    </div>
+                  </a>
+                ) : (
+                  <a
+                    id="theme-switcher"
+                    className="bg-transparent text-gray-700 text-sm w-full active:no-underline active:text-zinc-800 block cursor-pointer dark:hover:bg-gray-600 dark:text-gray-100 disabled:bg-transparent disabled:pointer-events-none disabled:text-gray-400 focus:bg-gray-200 focus:dark:bg-gray-600 focus:outline-none font-normal px-3 py-2 whitespace-nowrap"
+                    data-theme="dark"
+                    onClick={() => setCheck(!check)}
+                    data-twe-dropdown-item-ref
+                  >
+                    <div className="pointer-events-none">
+                      <div
+                        className="text-center w-[24px] inline-block"
+                        data-theme-icon="dark"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          className="h-6 w-6 inline-block"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      </div>
+                      <span data-theme-name="dark"></span>
+                    </div>
+                  </a>
+                )}
+              </div>
             </Button>
           </div>
         </div>
