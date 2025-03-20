@@ -23,8 +23,8 @@ const Cart = () => {
   return (
     <div>
       {CartProducts.length == 0 ? (
-        <div className="flex items-center flex-col h-screen sm:h-auto">
-          <img src={EmptyCart} className="sm:h-scree m-auto " />
+        <div className="flex flex-col h-screen items-center sm:h-auto">
+          <img src={EmptyCart} className="m-auto mt-16 sm:h-scree" />
           <Button
             color="green"
             className="mb-10 mt-10"
@@ -41,20 +41,20 @@ const Cart = () => {
               : "flex flex-col w-full container items-center m-auto mb-10 p-5    sm:p-0"
           }
         >
-          <div className="w-1/2 text-start shadow-lg dark:bg-gray-700 relative mb-10 h-20 bg-gray-500 text-white mt-5 flex items-center rounded-lg">
-            <span className="absolute bg-green-400 h-full w-2 top-0 left-0 rounded-t-lg rounded-b-lg "></span>
+          <div className="flex bg-gray-500 h-20 rounded-lg shadow-lg text-start text-white w-1/2 dark:bg-gray-700 items-center mb-10 mt-5 relative">
+            <span className="bg-green-400 h-full rounded-b-lg rounded-t-lg w-2 absolute left-0 top-0"></span>
 
-            <h1 className="text-[1.5em]  m-auto p-3 rounded text-white font-bold mt-10 mb-10">
+            <h1 className="m-auto p-3 rounded text-[1.5em] text-white font-bold mb-10 mt-10">
               Cart
             </h1>
-            <span className="absolute bg-green-400 h-full w-2 top-0 right-0 rounded-t-lg rounded-b-lg "></span>
+            <span className="bg-green-400 h-full rounded-b-lg rounded-t-lg w-2 absolute right-0 top-0"></span>
           </div>
 
-          <div className="overflow-x-auto w-full bg-gray-300 dark:bg-gray-700 rounded-lg sm:-mx-6 lg:-mx-8">
-            <div className="inline-block min-w-full py-2 ">
+          <div className="bg-gray-300 rounded-lg w-full dark:bg-gray-700 lg:-mx-8 overflow-x-auto sm:-mx-6">
+            <div className="inline-block min-w-full py-2">
               <div className="overflow-hidden">
-                <table className="min-w-full text-left text-sm font-light text-surface dark:text-white">
-                  <thead className="border-b border-neutral-200 font-medium dark:border-white/10 text-center">
+                <table className="text-left text-sm text-surface dark:text-white font-light min-w-full">
+                  <thead className="border-b border-neutral-200 text-center dark:border-white/10 font-medium">
                     <tr>
                       <th scope="col" className="px-6 py-4">
                         Image
@@ -77,19 +77,19 @@ const Cart = () => {
                     {CartProducts.map((p, i) => (
                       <tr
                         key={i}
-                        className="border-b border-neutral-200 dark:bg-gray-700 dark:border-white/10 text-center bg-gray-200"
+                        className="bg-gray-200 border-b border-neutral-200 text-center dark:bg-gray-700 dark:border-white/10"
                       >
-                        <td className="whitespace-nowrap px-6 py-4 ">
+                        <td className="px-6 py-4 whitespace-nowrap">
                           <img
                             src={p?.images[0]}
                             width={70}
                             className="m-auto"
                           />
                         </td>
-                        <td className="whitespace-nowrap px-6 py-4 ">
+                        <td className="px-6 py-4 whitespace-nowrap">
                           {p?.title}
                         </td>
-                        <td className="whitespace-nowrap px-6 py-4">
+                        <td className="px-6 py-4 whitespace-nowrap">
                           <div className="bg-whit rounded-lg">
                             <Button
                               onClick={() => dispatch(decrement(p))}
@@ -98,7 +98,7 @@ const Cart = () => {
                             >
                               -
                             </Button>
-                            <Button size="sm" className="ms-2 me-2 font-bold">
+                            <Button size="sm" className="font-bold me-2 ms-2">
                               {p.count}
                             </Button>
                             <Button
@@ -110,10 +110,10 @@ const Cart = () => {
                             </Button>
                           </div>
                         </td>
-                        <td className="whitespace-nowrap px-6 py-4">
+                        <td className="px-6 py-4 whitespace-nowrap">
                           {p?.price * p?.count}
                         </td>
-                        <td className="whitespace-nowrap px-6 py-4">
+                        <td className="px-6 py-4 whitespace-nowrap">
                           <Button
                             onClick={() => dispatch(deleteProduct(p))}
                             color="red"
@@ -129,12 +129,12 @@ const Cart = () => {
               </div>
             </div>
           </div>
-          <div className="sm:w-1/2 m-auto text-center mb-10 dark:bg-gray-700 dark:text-white bg-gray-300 flex justify-evenly rounded p-4 items-center mt-10">
+          <div className="flex bg-gray-300 justify-evenly m-auto p-4 rounded text-center dark:bg-gray-700 dark:text-white items-center mb-10 mt-10 sm:w-1/2">
             <Button
               onClick={() => dispatch(deleteAll())}
               color="red"
               // size="sm"
-              className="flex items-center gap-2"
+              className="flex gap-2 items-center"
             >
               Clear All <MdDelete className="text-[1.2em]" />
             </Button>
