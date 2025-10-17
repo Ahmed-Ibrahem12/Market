@@ -38,6 +38,7 @@ import WomensShoes from "./pages/Categories/WomensShoes";
 import SearchPage from "./pages/SearchPage";
 import ShowProduct from "./pages/ShowProduct";
 import Cart from "./pages/Cart";
+import Wishlist from "./pages/Wishlist";
 
 const App = () => {
   let [text, setText] = useState("");
@@ -55,6 +56,7 @@ const App = () => {
 
         <Routes>
           <Route element={<Home />} path="/" />
+          <Route element={<Wishlist />} path="/wishlist" />
           <Route element={<Beauty />} path="/beauty" />
           <Route element={<Groceries />} path="/groceries" />
           <Route element={<Furniture />} path="/furniture" />

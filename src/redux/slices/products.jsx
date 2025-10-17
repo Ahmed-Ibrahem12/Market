@@ -45,16 +45,16 @@ const Products = createSlice({
       state.CartProducts = newArr;
     },
     addToCart: (state, product) => {
-      let check = state.CartProducts?.some((prod) => {
-        return prod.id == product.payload.id;
-      });
-      if (check) {
-        Products.actions.increment(product);
+      const newproduct = product.payload;
+
+      const exitingProduct = state.CartProducts.find(
+        (p) => p.id === newproduct.id
+      );
+
+      if (exitingProduct) {
+        exitingProduct.count += 1;
       } else {
-        state.CartProducts = [
-          ...state.CartProducts,
-          { ...product.payload, count: 1 },
-        ];
+        state.CartProducts.push({ ...newproduct, count: 1 });
       }
     },
     deleteProduct: (state, product) => {

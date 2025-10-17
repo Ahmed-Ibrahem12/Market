@@ -129,19 +129,23 @@ const Cart = () => {
               </div>
             </div>
           </div>
-          <div className="flex bg-gray-300 justify-evenly m-auto p-4 rounded text-center dark:bg-gray-700 dark:text-white items-center mb-10 mt-10 sm:w-1/2">
-            <Button
-              onClick={() => dispatch(deleteAll())}
-              color="red"
-              // size="sm"
-              className="flex gap-2 items-center"
-            >
-              Clear All <MdDelete className="text-[1.2em]" />
-            </Button>
-            <p className="text-[1.1em] font-bold">
-              Total Price : {totalPrice.toFixed(2)}
-            </p>
-            <Button color="green">Check Out</Button>
+          <div className="flex flex-col gap-4 bg-gray-300 justify-evenly m-auto p-4 rounded text-center dark:bg-gray-700 dark:text-white items-center mb-10 mt-10 sm:w-1/2">
+            <div className="w-full">
+              <p className="text-[1.1em] font-bold">
+                Total Price : {totalPrice.toFixed(2)}
+              </p>
+            </div>
+            <div className="flex justify-around items-center w-full gap-4 flex-col sm:flex-row">
+              <Button
+                onClick={() => dispatch(deleteAll())}
+                color="red"
+                // size="sm"
+                className="flex gap-2 items-center"
+              >
+                Clear All <MdDelete className="text-[1.2em]" />
+              </Button>
+              <Button color="green">Check Out</Button>
+            </div>
           </div>
         </div>
       )}

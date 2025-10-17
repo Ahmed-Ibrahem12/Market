@@ -10,9 +10,7 @@ export const getSearchProducts = createAsyncThunk(
         method: "get",
         url: `https://dummyjson.com/products/search?q=${search}`,
       });
-      // return data.data.products.filter((product) =>
-      //   product.title.toLowerCase().includes(search)
-      // );
+
       return data.data;
     } catch (er) {
       return rejectWithValue(er.message);
