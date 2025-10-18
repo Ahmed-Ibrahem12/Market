@@ -83,7 +83,7 @@ export default function Header({ text, setText, openDrawer }) {
           <div className="relative">
             <motion.button
               onClick={() => navigate("/wishlist")}
-              className="bg-green-700 hover:bg-green-600 rounded-lg p-2 flex justify-center items-center"
+              className="bg-green-800 hover:bg-green-600 rounded-lg p-2 flex justify-center items-center"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               animate={{
